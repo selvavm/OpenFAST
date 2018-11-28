@@ -41,7 +41,6 @@ add_library(openfastcpplib
 set_property(TARGET openfastcpplib PROPERTY POSITION_INDEPENDENT_CODE ON)
 target_link_libraries(openfastcpplib
   openfastlib
-  sccpplib
   ${HDF5_C_LIBRARIES}
   ${HDF5_HL_LIBRARIES}
   ${ZLIB_LIBRARIES}

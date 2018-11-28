@@ -70,6 +70,12 @@ endif(MPI_LINK_FLAGS)
 
 set_property(TARGET openfastcpp PROPERTY LINKER_LANGUAGE CXX)
 
+install(TARGETS sccpplib
+  EXPORT "${CMAKE_PROJECT_NAME}Libraries"
+  RUNTIME DESTINATION lib
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib)
+  
 install(TARGETS openfastcpplib
   EXPORT "${CMAKE_PROJECT_NAME}Libraries"
   RUNTIME DESTINATION lib

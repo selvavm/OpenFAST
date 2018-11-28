@@ -75,7 +75,7 @@ class fastInputs {
   fastInputs() ;
  
   // Destructor
-  ~fastInputs() {} ;
+  //~fastInputs() {} ;
 
 };
 

@@ -36,11 +36,19 @@ include_directories(${MPI_INCLUDE_PATH})
 
 add_library(sccpplib
   src/SC.cpp)
+
+install(TARGETS sccpplib
+  EXPORT "${CMAKE_PROJECT_NAME}Libraries"
+  RUNTIME DESTINATION lib
+  ARCHIVE DESTINATION lib
+  LIBRARY DESTINATION lib)
+  
 add_library(openfastcpplib
   src/OpenFAST.cpp)
 set_property(TARGET openfastcpplib PROPERTY POSITION_INDEPENDENT_CODE ON)
 target_link_libraries(openfastcpplib
   openfastlib
+  sccpplib
   ${HDF5_C_LIBRARIES}
   ${HDF5_HL_LIBRARIES}
   ${ZLIB_LIBRARIES}
@@ -69,12 +77,6 @@ if(MPI_LINK_FLAGS)
 endif(MPI_LINK_FLAGS)
 
 set_property(TARGET openfastcpp PROPERTY LINKER_LANGUAGE CXX)
-
-install(TARGETS sccpplib
-  EXPORT "${CMAKE_PROJECT_NAME}Libraries"
-  RUNTIME DESTINATION lib
-  ARCHIVE DESTINATION lib
-  LIBRARY DESTINATION lib)
   
 install(TARGETS openfastcpplib
   EXPORT "${CMAKE_PROJECT_NAME}Libraries"

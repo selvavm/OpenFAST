@@ -59,7 +59,7 @@ class SuperController {
 
   SuperController();
 
-  ~SuperController() ;
+  ~SuperController() {} ;
 
   void init(int nTurbinesGlob);
   

@@ -68,11 +68,11 @@ class SuperController {
   void calcOutputs_n(double t, std::vector<float> & sc_inputsGlob, std::vector<float> & sc_inputsTurbine, std::vector<float> & sc_outputsGlob, std::vector<float> & sc_outputsTurbine) ;
   void calcOutputs_np1(double t, std::vector<float> & sc_inputsGlob, std::vector<float> & sc_inputsTurbine, std::vector<float> & sc_outputsGlob, std::vector<float> & sc_outputsTurbine) ;
 
-  void updateStates(double t, std::vector<float> & sc_inputsGlob, std::vector<float> & sc_inputsTurbine) ; //Make a prediction for states at 'n+1' based on inputs and states at 'n'
+  void updateStates(double t, std::vector<float> & sc_inputsGlob, std::vector<float> & sc_inputsTurbine) {}; //Make a prediction for states at 'n+1' based on inputs and states at 'n'
 
   void advanceStates() ; //Advance states to time step 'n+1'
 
-  int writeRestartFile(int n_t_global);
+  int writeRestartFile(int n_t_global) {};
 
   int readRestartFile(int n_t_global);
 
